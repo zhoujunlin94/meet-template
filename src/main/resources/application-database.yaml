@@ -1,5 +1,5 @@
 spring:
-  multiple:
+  dynamic:
     datasource:
       # 数据源-1
       meet:
@@ -25,9 +25,9 @@ spring:
           # 连接测试query
           connectionTestQuery: SELECT 1
         mybatis:
-          typeAliasesPackage: io.github.zhoujunlin94.meet.infrastructure.mysql.meet.entity
-          mapperLocation: classpath*:mybatis/meet/*.xml
-          basePackages: io.github.zhoujunlin94.meet.infrastructure.mysql.meet.mapper
+          entityPackage: io.github.zhoujunlin94.meet.infrastructure.mysql.meet.entity
+          mapperXmlLocation: classpath*:mybatis/meet/*.xml
+          mapperPackage: io.github.zhoujunlin94.meet.infrastructure.mysql.meet.mapper
           interceptors:
             - clazz: com.github.pagehelper.PageInterceptor
               properties:
@@ -55,9 +55,9 @@ spring:
           connectionTimeout: 30000
           connectionTestQuery: SELECT 1
         mybatis:
-          typeAliasesPackage: io.github.zhoujunlin94.meet.infrastructure.mysql.base.entity
-          mapperLocation: classpath*:mybatis/base/*.xml
-          basePackages: io.github.zhoujunlin94.meet.infrastructure.mysql.meet.mapper
+          entityPackage: io.github.zhoujunlin94.meet.infrastructure.mysql.base.entity
+          mapperXmlLocation: classpath*:mybatis/base/*.xml
+          mapperPackage: io.github.zhoujunlin94.meet.infrastructure.mysql.meet.mapper
           interceptors:
             - clazz: com.github.pagehelper.PageInterceptor
               properties:

@@ -14,6 +14,6 @@ knife4j:
   setting:
     language: zh_cn
 
-spring:
-  profiles:
-    include: database
+#spring:
+#  profiles:
+#    include: database

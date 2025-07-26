@@ -1,6 +1,6 @@
 package io.github.zhoujunlin94.meet.configuration;
 
-import io.github.zhoujunlin94.meet.common.constant.FastJsonConfigConst;
+import io.github.zhoujunlin94.meet.web.constant.FastJsonConfigConst;
 import io.github.zhoujunlin94.meet.web.interceptor.HttpBaseInterceptor;
 import jakarta.annotation.Resource;
 import org.springframework.context.annotation.Configuration;
@@ -27,7 +27,7 @@ public class WebMvcConfiguration implements WebMvcConfigurer {
         // 基础http请求拦截器
         registry.addInterceptor(httpBaseInterceptor)
                 .excludePathPatterns("/favicon.ico", "/assets/**/*", "/**/*.js", "/**/*.html", "/**/*.css")
-                .excludePathPatterns("/swagger-resources", "/v3/api-docs/**/*")
+                .excludePathPatterns("/swagger-resources", "/v3/api-docs")
         ;
     }
 
